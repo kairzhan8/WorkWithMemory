@@ -52,18 +52,18 @@ class Person {
     
     var job: Job?
     
-    deinit {
-        print("Person will be dealocated")
-    }
+//    deinit {
+//        print("Person will be dealocated")
+//    }
 }
 // Child
 class Job {
     
     weak var person: Person?
     
-    deinit {
-        print("Job will be dealocated")
-    }
+//    deinit {
+//        print("Job will be dealocated")
+//    }
 }
 
 class Parent {

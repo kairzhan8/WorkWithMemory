@@ -9,22 +9,23 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    
+    private lazy var closure: (() -> Void) = {
+        self.view.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        closure()
+    }
+
+    @IBAction func closeVC(_ sender: UIButton) {
+        dismiss(animated: true)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    deinit {
+        print("SecondVC was deinit", SecondViewController.self)
     }
-    */
-
+    
 }
