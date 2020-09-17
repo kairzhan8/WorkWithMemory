@@ -24,18 +24,46 @@ class ViewController: UIViewController {
 //        first = nil
 //        second = nil
 //        third = nil
+        //---------------------------
+//        var mother: Parent?
+//        mother = Parent()
+//        mother = nil
+        //----------------------------
+        var kairzhan: Person?
+        var google: Job?
         
-        var mother: Parent?
-        mother = Parent()
-        mother = nil
+        kairzhan = Person()
+        google = Job()
         
+        kairzhan?.job = google
+        google?.person = kairzhan
         
+        kairzhan = nil
+        google = nil
     }
 
     @IBAction func openSecondVC(_ sender: UIButton) {
     }
+     
     
+}
+// Parent
+class Person {
     
+    var job: Job?
+    
+    deinit {
+        print("Person will be dealocated")
+    }
+}
+// Child
+class Job {
+    
+    weak var person: Person?
+    
+    deinit {
+        print("Job will be dealocated")
+    }
 }
 
 class Parent {
