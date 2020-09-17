@@ -17,19 +17,41 @@ class ViewController: UIViewController {
         
         label.isHidden = true
         
-        var first: MyClass? = MyClass()
-        var second = first
-        var third = first
+//        var first: MyClass? = MyClass()
+//        var second = first
+//        var third = first
+//
+//        first = nil
+//        second = nil
+//        third = nil
         
-        first = nil
-        second = nil
-        third = nil
+        var mother: Parent?
+        mother = Parent()
+        mother = nil
+        
+        
     }
 
     @IBAction func openSecondVC(_ sender: UIButton) {
     }
     
     
+}
+
+class Parent {
+    
+    var child = Child() //зависит от класса Child и владелец Parent
+    
+    deinit {
+        print("Parent will be dealocated")
+    }
+}
+
+class Child {
+    
+    deinit {
+        print("Child will be dealocated")
+    }
 }
 
 class MyClass {
