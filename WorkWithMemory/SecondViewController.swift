@@ -10,7 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    private lazy var closure: (() -> Void) = {
+    private lazy var closure: (() -> Void) = { [unowned self] in
         self.view.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
     }
 
