@@ -17,11 +17,18 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        closure()
+//        closure()
+        doSomething {
+            self.view.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+        }
     }
 
     @IBAction func closeVC(_ sender: UIButton) {
         dismiss(animated: true)
+    }
+    
+    private func doSomething(_ completionHandler: () -> Void) {
+        completionHandler()
     }
     
     deinit {
